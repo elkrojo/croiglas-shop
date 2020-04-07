@@ -8,6 +8,7 @@
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
                 <h3>{{ product.title }}</h3>
+                <h6>{{ product.get_brand_display }}</h6>
                 <p class="product-description">{{ product.description }}</p>
                 <p>€{{ product.price }}</p>
 
