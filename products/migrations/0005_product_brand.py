@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='product',
             name='brand',
-            field=models.CharField(choices=[('LABONE', 'Label One'), ('LABTWO', 'Label Two'), ('LABTHR', 'Label Three'), ('LABFOU', 'Label Four'), ('LABFIV', 'Label Five'), ('LABSIX', 'Label Six'), ('LABSEV', 'Label Seven')], default='LABONE', max_length=3),
+            field=models.CharField(choices=[('LABONE', 'Label One'), ('LABTWO', 'Label Two'), ('LABTHR', 'Label Three'), ('LABFOU', 'Label Four'), ('LABFIV', 'Label Five'), ('LABSIX', 'Label Six'), ('LABSEV', 'Label Seven')], default='LABONE', max_length=6),
         ),
     ]
