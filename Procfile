@@ -1,1 +1,1 @@
-web: gunicorn croiglas-shop.wsgi:application
+web: gunicorn croiglas_shop.wsgi:application
