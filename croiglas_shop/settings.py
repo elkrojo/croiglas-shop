@@ -32,7 +32,7 @@ if "DATABASE_URL" in os.environ:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'croiglas-shop.herokuapp.com']
 
 
 # Application definition
