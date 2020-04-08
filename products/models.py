@@ -16,7 +16,9 @@ class Product(models.Model):
                                 choices=PRODUCT_CATEGORY_CHOICES,
                                 default='MJACPAR')
 
-    title = models.CharField(max_length=100, blank=False)
+    title = models.CharField(max_length=100,
+                             default='',
+                             blank=False)
 
     description = models.TextField(blank=False)
 
