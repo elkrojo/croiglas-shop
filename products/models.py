@@ -3,18 +3,24 @@ import products.choices as choices
 
 BRAND_CHOICES = choices.BRAND_CHOICES
 PRODUCT_CATEGORY_CHOICES = choices.PRODUCT_CATEGORY_CHOICES
+PERSON_CATEGORY_CHOICES = choices.PERSON_CATEGORY_CHOICES
 SIZE_CHOICES = choices.SIZE_CHOICES
 
 
 # Create your models here.
+
 class Product(models.Model):
     brand = models.CharField(max_length=6,
                              choices=BRAND_CHOICES,
                              default='LABONE')
 
-    category = models.CharField(max_length=7,
-                                choices=PRODUCT_CATEGORY_CHOICES,
-                                default='MJACPAR')
+    product_category = models.CharField(max_length=7,
+                                        choices=PRODUCT_CATEGORY_CHOICES,
+                                        default='MJACPAR')
+
+    person_category = models.CharField(max_length=1,
+                                       choices=PERSON_CATEGORY_CHOICES,
+                                       default='M')
 
     title = models.CharField(max_length=100,
                              default='',
@@ -31,6 +37,8 @@ class Product(models.Model):
                                 blank=False)
 
     image = models.ImageField(upload_to='images')
+
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title
