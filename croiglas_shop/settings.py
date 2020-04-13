@@ -27,10 +27,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if "DATABASE_URL" in os.environ:
-    DEBUG = False
-else:
-    DEBUG = True
+
+# Switch on when final production build deployed
+# if "DATABASE_URL" in os.environ:
+#     DEBUG = False
+# else:
+#     DEBUG = True
+
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'croiglas-shop.herokuapp.com']
 
@@ -89,6 +93,7 @@ WSGI_APPLICATION = 'croiglas_shop.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ:
+    print("Postgres production database is connected")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
         }
@@ -155,6 +160,7 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
