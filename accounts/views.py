@@ -31,7 +31,7 @@ def login(request):
                 auth.login(request, user)
                 messages.error(request, "You have successfully logged in")
 
-                if request.GET and request.GET['next'] !='':
+                if request.GET and request.GET['next'] != '':
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
