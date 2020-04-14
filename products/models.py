@@ -8,19 +8,18 @@ SIZE_CHOICES = choices.SIZE_CHOICES
 
 
 # Create your models here.
-
 class Product(models.Model):
+    person_category = models.CharField(max_length=1,
+                                       choices=PERSON_CATEGORY_CHOICES,
+                                       default='M')
+
     brand = models.CharField(max_length=6,
                              choices=BRAND_CHOICES,
                              default='LABONE')
 
-    product_category = models.CharField(max_length=7,
+    product_category = models.CharField(max_length=6,
                                         choices=PRODUCT_CATEGORY_CHOICES,
-                                        default='MJACPAR')
-
-    person_category = models.CharField(max_length=1,
-                                       choices=PERSON_CATEGORY_CHOICES,
-                                       default='M')
+                                        default='JACPAR')
 
     title = models.CharField(max_length=100,
                              default='',
