@@ -8,15 +8,15 @@ SIZE_CHOICES = choices.SIZE_CHOICES
 
 
 # Create your models here.
-class MainFilter(models.Model):
-    category = models.CharField(max_length=3)
+class GenderFilter(models.Model):
+    category = models.CharField(max_length=1)
 
     def __str__(self):
         return self.category
 
 
 class Product(models.Model):
-    person_category = models.ForeignKey('MainFilter',
+    person_category = models.ForeignKey(GenderFilter,
                                         blank=True,
                                         null=True,
                                         on_delete=models.SET_NULL)
