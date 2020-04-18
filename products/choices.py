@@ -9,12 +9,6 @@ BRAND_CHOICES = (
     ('LABSEV', 'Label Seven'),
 )
 
-PERSON_CATEGORY_CHOICES = (
-    ('M', 'Men'),
-    ('F', 'Women'),
-    ('K', 'Kids'),
-)
-
 PRODUCT_CATEGORY_CHOICES = (
     ('Upper-body', (
             ('JACPAR', 'Parka'),
