@@ -31,12 +31,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# Switch on when final production build deployed
-# if "DATABASE_URL" in os.environ:
-#     DEBUG = False
-# else:
-#     DEBUG = True
-
 ALLOWED_HOSTS = ['localhost', 'croiglas-shop.herokuapp.com']
 
 
@@ -52,6 +46,7 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
     'storages',
     'accounts',
+    'home',
     'products',
     'cart',
     'checkout',
