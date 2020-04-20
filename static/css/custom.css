@@ -67,6 +67,12 @@ a:visited {
     padding-top: 20px;
 }
 
+.navbar-brand img {
+    padding-bottom: 8px;
+    height: 30px;
+    width: auto;
+}
+
 .navbar-nav > li > a {
     padding-top: 20px;
 }
@@ -88,6 +94,24 @@ footer {
 }
 
 /* Buttons */
+.btn.btn-default {
+    background-image: none;
+    background-color: #3e53bb;
+    border: none;
+    min-width: 160px;
+    padding: 10px 0;
+    margin-right: 10px;
+}
+
+.btn.btn-default:last-child {
+    margin-right: 0;
+}
+
+.btn.btn-default:hover {
+    background-color: #384ba6;
+    color: #fff;
+}
+
 .btn-success:hover {
     background-color: #676767;
 }
@@ -115,6 +139,18 @@ footer {
 .label-warning[href],
 .badge-warning[href] {
     background-color: #c67605;
+}
+
+.carousel-caption {
+    margin-bottom: 48px;
+}
+
+.carousel-caption a {
+    margin-top: 18px;
+}
+
+.carousel-caption h1 {
+    color: #fff;
 }
 
 /* Product Cards */
