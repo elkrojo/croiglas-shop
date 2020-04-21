@@ -176,12 +176,17 @@ footer {
 .product-vitals {
     background-color: #fff;
     padding: 16px 0;
-    margin: 15px 0;
+    margin: 15px 0 0 0;
     font-size: 0.9em;
 }
 
 caption p {
     word-wrap: break-word;
+}
+
+.panel {
+    box-shadow: none;
+    border: none;
 }
 
 .panel-default {
@@ -192,7 +197,7 @@ caption p {
 .panel-body {
     background-color: #efefef;
     height: 100%;
-    padding: 15px;
+    padding: 15px 0 0 0;
 }
 
 /* Product Showcase */
