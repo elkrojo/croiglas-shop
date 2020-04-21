@@ -15,23 +15,23 @@
 	<!-- Wrapper for slides -->
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<a href="#">
+			<a href="{% url 'mens_products' %}">
 				<img src="{% static 'img/carousel-men.jpg' %}" alt="Mens Fashion">
             </a>
             <div class="carousel-caption">
                 <h1>Men</h1>
-                <a href="#" class="btn btn-default">Shop Men</a>
-                <a href="#" class="btn btn-default">Shop Women</a>
+                <a href="{% url 'mens_products' %}" class="btn btn-default">Shop Men</a>
+                <a href="{% url 'womens_products' %}" class="btn btn-default">Shop Women</a>
             </div>
 		</div>
 		<div class="item">
-			<a href="#">
+			<a href="{% url 'womens_products' %}">
 				<img src="{% static 'img/carousel-women.jpg' %}" alt="Womens Fashion">
             </a>
             <div class="carousel-caption">
                 <h1>Women</h1>
-                <a href="#" class="btn btn-default">Shop Men</a>
-                <a href="#" class="btn btn-default">Shop Women</a>
+                <a href="{% url 'mens_products' %}" class="btn btn-default">Shop Men</a>
+                <a href="{% url 'womens_products' %}" class="btn btn-default">Shop Women</a>
             </div>
 		</div>
 		<div class="item">
@@ -40,8 +40,8 @@
             </a>
             <div class="carousel-caption">
                 <h1>Discount</h1>
-                <a href="#" class="btn btn-default">Shop Men</a>
-                <a href="#" class="btn btn-default">Shop Women</a>
+                <a href="{% url 'mens_products' %}" class="btn btn-default">Shop Men</a>
+                <a href="{% url 'womens_products' %}" class="btn btn-default">Shop Women</a>
             </div>
         </div>
 	</div>
