@@ -9,14 +9,14 @@ def all_products(request):
 
 
 def mens_products(request):
-    category = GenderFilter.objects.filter(category="M")
-    products = Product.objects.filter(person_category=category)
+    person_category = GenderFilter.objects.filter(category="M")
+    products = Product.objects.filter(person_category=person_category)
     return render(request, "products.html", {"products": products})
 
 
 def womens_products(request):
-    category = GenderFilter.objects.filter(category="W")
-    products = Product.objects.filter(person_category=category)
+    person_category = GenderFilter.objects.filter(category="W")
+    products = Product.objects.filter(person_category=person_category)
     return render(request, "products.html", {"products": products})
 
 
