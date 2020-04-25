@@ -47,10 +47,21 @@
                             {% endif %}
                         </a>
                     </li>
+                    <li>
+                        <a href="#">
+                            <button data-toggle="collapse" data-target="#search-box"><i class="fa fa-search"></i></button>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <div id="search-box" class="container collapse text-center">
+        <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+        </form>
+    </div>
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
@@ -61,12 +72,6 @@
         </div>
     {% endif %}
     <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
-        </div>
         {% block content %} {% endblock %}
     </div>
     <footer>
