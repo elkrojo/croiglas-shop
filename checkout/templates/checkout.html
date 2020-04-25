@@ -13,7 +13,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="row row-flex">
+
+<div class="container">
+    <table class="table table-hover table-condensed checkout-table">
+        <thead>
+            <tr>
+                <th style="width:60%">Product</th>
+                <th style="width:10%">Price</th>
+                <th style="width:8%">Quantity</th>
+                <th style="width:22%" class="text-center">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-2 hidden-xs cart-product-image" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                            <div class="col-sm-10">
+                                <h4 class="nomargin">{{ item.product.name }}</h4>
+                                <p>{{ item.product.description }}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-th="Price">{{ item.product.price }}</td>
+                    <td data-th="Quantity">{{item.quantity}}</td>
+                    <td data-th="Total" class="text-center"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr class="visible-xs">
+                <td class="text-center"><strong>{{ total }}</strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="hidden-xs"></td>
+                <td class="hidden-xs text-center"><strong>€ {{ total }}</strong></td>
+                <td></td>
+            </tr>
+		</tfoot>
+    </table>
+</div>
+
+<!-- <div class="row row-flex">
     {% for item in cart_items %}
         <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
             <div class="panel-body">
@@ -32,13 +75,13 @@
 <div class="row">
     <p>Total</p>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
-</div>
+</div> -->
 
 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
     <legend>Payment Details</legend>
 
     <div id="credit-card-errors" style="display: none;">
-        <div id="alert-message block-message error" id="stripe-error-message"></div>
+        <div class="alert-message block-message error" id="stripe-error-message"></div>
     </div>
 
     <div class="form-group col-md-6">
