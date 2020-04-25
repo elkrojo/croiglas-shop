@@ -83,7 +83,6 @@ a:visited {
 
 /* Footer */
 footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     margin-top: 40px;
@@ -114,6 +113,7 @@ footer {
 
 .btn-success:hover {
     background-color: #676767;
+    border-color: #262626;
 }
 
 .btn-success {
@@ -122,6 +122,10 @@ footer {
     background-color: #262626;
     transition: .2s ease-in-out;
     border-color: #262626;
+}
+
+a.btn-success {
+    color: #fff;
 }
 
 .btn-success.checkout {
@@ -212,4 +216,56 @@ caption p {
 .showcase-price {
     font-size: 2em;
     color: #707070;
+}
+
+/* Cart */
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+
+.cart-product-image {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+/* Checkout */
+.checkout-table {
+    margin-bottom: 60px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table#cart thead { display: none; }
+	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	table#cart tfoot td{display:block; }
+	table#cart tfoot td .btn{display:block;}
+	
 }
