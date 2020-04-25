@@ -149,6 +149,10 @@ a.btn-success {
     background-color: #c67605;
 }
 
+#search-box {
+    margin-bottom: 8px;
+}
+
 .carousel-caption {
     margin-bottom: 48px;
 }
