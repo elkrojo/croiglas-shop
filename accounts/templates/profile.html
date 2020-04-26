@@ -1,5 +1,22 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
 {% block content %}
     <h2>Success!</h2>
     <p>You are logged in as {{ user.email }} </p>
+
+    <form role="form" method="post" id="profile-form" action="{% url 'profile' %}">
+    <legend>Profile Details</legend>
+
+    <div class="form-group col-md-6">
+        {{ profile_form | as_bootstrap }}
+    </div>
+
+    {% csrf_token %}
+    <div class="form-group col-md-12">
+        <input class=" btn btn-primary" id="update_profile_btn" name="commit" type="submit" value="Update Profile">
+    </div>
+</form>
+
 {% endblock %}
