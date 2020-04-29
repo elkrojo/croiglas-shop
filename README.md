@@ -63,8 +63,8 @@ The shop is divided into two main sections. One section caters to Men, while the
 Upon selecting one of these options, only products in the selected category will be displayed to the user.
 
 ### Skeleton
-[Desktop Wireframe](https://raw.githubusercontent.com/elkrojo/conjure/master/static/images/docu/conjure-desktop.jpeg)      
-[Mobile Wireframe](https://raw.githubusercontent.com/elkrojo/conjure/master/static/images/docu/conjure-mobile.jpeg)
+[Desktop Wireframe](https://raw.githubusercontent.com/elkrojo/croiglas-shop/master/static/img/presentation/croiglas-shop-desktop.jpeg)      
+[Mobile Wireframe](https://raw.githubusercontent.com/elkrojo/croiglas-shop/master/static/img/presentation/croiglas-shop-mobile.jpeg)
 
 ### Surface
 The home page makes use of a cycling clickable image display with embedded buttons. 
