@@ -125,24 +125,31 @@ Products are displayed in evenly spaced tiles, below which are clearly displayed
 
 ### Data Structure
 
-Accounts App
+**Accounts App:**
 
 **Customer**
-| Id | Type |
---- | ---
-_id | ObjectId
-genre_name | String
-genre_style | Array
+| Id | Data Type | Validation
+--- | --- | ---
+id | int | auto-increment
+user | onetoone(User) |
+full_name | models.CharField | max_length=42
+street_address_1 | varchar | max_length=32
+street_address_2 | varchar | max_length=32
+city | varchar | max_length=24
+postcode | varchar | max_length=12
+county | varchar | max_length=24
+country | varchar |max_length=32
+phone_number | varchar | max_length=16
 <br>
 
 
-Products App
+**Products App:**
 
 **GenderFilter**
 | Id | Data Type | Validation
 --- | --- | ---
 id | int | auto-increment
-category| char(1) | max_length=1
+category| varchar | max_length=1
 <br>
 
 **Product**
@@ -161,19 +168,62 @@ quantity | int | default=1
 <br>
 
 
-Checkout App
+**Checkout App:**
 
 **Order**
-| Id | Type |
---- | ---
-
+| Id | Data Type | Validation
+--- | --- | ---
+id | int | auto-increment
+full_name | varchar | max_length=50, blank=False
+street_address_1 | varchar | max_length=40, blank=False)
+street_address_2 | varchar | max_length=40, blank=False)
+city | varchar | max_length=40, blank=False)
+postcode | varchar | max_length=20, blank=True)
+county | varchar | max_length=40, blank=False)
+country | varchar | max_length=40, blank=False)
+phone_number | varchar | max_length=20, blank=False)
+date | date | 
 <br>
 
 **OrderLineItem**
 | Id | Type |
 --- | ---
+id | int | auto-increment
+order | foreignkey(Order) | null=False
+product | foreignkey(Product) | null=False
+quantity | int | blank=False
 
 
+<br>
+
+[Back to Top](#table-of-contents)
+
+---
+
+## Technologies Used
+[Python3](https://www.python.org/) - The project uses **Python3** to build the backend data processing features.       
+
+[Django 1.11](https://django-documentation.readthedocs.io/en/latest/index.html) - The project uses **Django1.11** as the web application framework.     
+
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript) - The project uses **JavaScript** to add dynamic stripe authentication at the checkout.      
+
+[HTML5](https://en.wikipedia.org/wiki/HTML5) - The project uses **HTML5** to structure the page contents.     
+
+[CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - The project uses **CSS3** to style the HTML elements.         
+
+[Bootstrap3](https://getbootstrap.com/docs/3.3/) - The project uses **Bootstrap3** for consistent styling and responsive alignment of HTML elements.        
+
+[JQuery](https://jquery.com) - The project uses **JQuery** to simplify DOM manipulation.       
+
+[GitHub](https://github.com) - The project uses **GitHub** as a version control repository.
+
+[AWS S3](https://aws.amazon.com/s3/) - The project uses **AWS S3** to host static files and media.      
+
+[Stripe](https://stripe.com/) - The project uses **Stripe** to process credit card payments.        
+
+[Travis CI](https://travis-ci.org) - The project uses **Travis CI** to run build tests throughout development.      
+
+[Heroku](https://www.heroku.com) - The project uses  **Heroku** to host and serve the web application with database.        
 
 <br>
 
