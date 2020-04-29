@@ -4,14 +4,8 @@ from django.db.models import Q
 
 class CaseInsensitiveAuth:
     """
-    Authenticate a of User by using a case-insensitive query to check a
-    combination of the supplied email/username and password.
-    To avoid the risk of having two users with similar usernames,
-    distinguished only by letter case (e.g. 'john' and 'John'), consider
-    updating your User model to save usernames as lower case entries to
-    the database.
-    This will ensure all usernames have unique spellings, and as a result,
-    our case insensitive query will return a single result only.
+    Authenticate a user by an exact match on the username and password, 
+    or by the email address and password.
     """
     def authenticate(self, username_or_email=None, password=None):
         """
