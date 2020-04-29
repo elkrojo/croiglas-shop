@@ -217,6 +217,10 @@ caption p {
 }
 
 /* Product Showcase */
+.image-responsive {
+    width: 250px;
+}
+
 .showcase-title {
     font-size: 2em;
 }
