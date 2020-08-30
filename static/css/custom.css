@@ -175,6 +175,25 @@ a.btn-success {
 }
 
 /* Product Cards */
+#gender-select {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#gender-select a {
+    color: #676767;
+    transition: .2s ease-in-out;
+}
+
+#gender-select a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+#gender-separator {
+    margin: 0 1.1em;
+}
+
 .product-card {
     color: inherit;
 }
