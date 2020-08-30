@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['localhost', 'croiglas-shop.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'croiglas-shop.herokuapp.com']
 
 
 # Application definition
