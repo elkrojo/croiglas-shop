@@ -2,14 +2,11 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages, auth
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
-from .forms import UserLoginForm, UserRegistrationForm, CustomerForm
-from .models import Customer
+from .forms import UserLoginForm, UserRegistrationForm, BillingAddressForm
+from .models import BillingAddress
 
 
 # Create your views here.
-# def index(request):
-#     """A view that displays the index page"""
-#     return render(request, "index.html")
 
 
 @login_required
@@ -81,22 +78,22 @@ def register(request):
 @login_required
 def profile(request):
     """
-    Shows the customer their current profile details.
-    Allows the customer to update their profile details.
-    Creates a new customer on completion.
+    Shows the customer their current billing address details.
+    Allows the customer to update their billing address details.
+    Creates a new billing address on completion.
     """
 
-    customer = Customer.objects.filter(user=request.user).first()
+    billing_address = BillingAddress.objects.filter(user=request.user).first()
     if request.method == "POST":
-        profile_form = CustomerForm(request.POST, instance=customer)
-        if profile_form.is_valid():
-            customer = profile_form.save(commit=False)
-            customer.user = request.user
-            customer.save()
+        billing_form = BillingForm(request.POST, instance=billing_address)
+        if billing_form.is_valid():
+            billing_address = billing_form.save(commit=False)
+            billing_address.user = request.user
+            billing_address.save()
             messages.success(request,
-                             "Your profile has been updated successfully")
+                             "Your billing address has been updated successfully")
     else:
-        profile_form = CustomerForm(instance=customer)
+        billing_form = BillingAddressForm(instance=billing_address)
 
-    args = {"profile_form": profile_form}
+    args = {"billing_form": billing_form}
     return render(request, "profile.html", args)
