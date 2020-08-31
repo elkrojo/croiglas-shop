@@ -85,7 +85,7 @@ def profile(request):
 
     billing_address = BillingAddress.objects.filter(user=request.user).first()
     if request.method == "POST":
-        billing_form = BillingForm(request.POST, instance=billing_address)
+        billing_form = BillingAddressForm(request.POST, instance=billing_address)
         if billing_form.is_valid():
             billing_address = billing_form.save(commit=False)
             billing_address.user = request.user
