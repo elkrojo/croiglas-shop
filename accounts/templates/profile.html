@@ -6,10 +6,10 @@
     <p>You are logged in as {{ user.email }} </p>
 
     <form role="form" method="post" id="profile-form" action="{% url 'profile' %}">
-    <legend>Profile Details</legend>
+    <legend>Billing Details</legend>
 
     <div class="form-group col-md-6">
-        {{ profile_form | as_bootstrap }}
+        {{ billing_form | as_bootstrap }}
     </div>
 
     {% csrf_token %}
