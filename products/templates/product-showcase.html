@@ -37,6 +37,7 @@
                     <form method="post" action="{% url 'add_to_cart' product.id %}">
                         {% csrf_token %}
                         <div class="input-group">
+                            <input name="return_path" type="hidden" value="{{ request.path }}">
                             <input name="quantity" type="number" min="1" max="999" value="1" class="form-control">
                             <span class="input-group-btn">
                                 <button class="btn btn-success" type="submit">Add</button>
