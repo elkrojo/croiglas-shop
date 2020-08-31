@@ -113,7 +113,11 @@ Products are displayed in evenly spaced tiles, below which are clearly displayed
 
 **Contact Form** - would allow the user to contact a shop employee, whatever the purpose.      
 
-**Shipping** - would shoe users the shipping cost depending on location.
+**Shipping** - would present the shipping cost to a user depending on their location.
+
+**Shipping Address Toggle** - would allow the user to import their billing address in the event that it is the same as the shipping address for the current order.
+
+**Previous Shipping Address** - would allow the user to select a shipping address from a previous order.
 
 **Purchase Confirmation Email** - would sent a copy of the checkout receipt to the customer following a successful payment.
 
@@ -131,7 +135,7 @@ Products are displayed in evenly spaced tiles, below which are clearly displayed
 
 **Accounts App:**
 
-**Customer**
+**BillingAddress**
 | Id | Data Type | Modifiers
 --- | --- | ---
 id | int pk | auto-increment
@@ -144,8 +148,10 @@ postcode | varchar | max_length=12
 county | varchar | max_length=24
 country | varchar |max_length=32
 phone_number | varchar | max_length=16
-<br>
 
+>*Note: Billing address is not always the same as the shipping address for an order, and as such requires its own database table.*
+
+<br>
 
 **Products App:**
 
@@ -161,11 +167,11 @@ category| varchar | max_length=1
 --- | --- | ---
 id | int pk | auto-increment
 person_category | foreignkey(GenderFilter) | blank=True, null=True, on_delete=models.SET_NULL
-brand | varchar(6) | max_length=6, choices=BRAND_CHOICES, default='LABONE'
-product_category | varchar(6) | max_length=6, choices=PRODUCT_CATEGORY_CHOICES, default='JACPAR'
-title | varchar(100) | max_length=100, default='', blank=False
+brand | varchar | max_length=6, choices=BRAND_CHOICES, default='LABONE'
+product_category | varchar | max_length=6, choices=PRODUCT_CATEGORY_CHOICES, default='JACPAR'
+title | varchar | max_length=100, default='', blank=False
 description | text | blank=False
-size | varchar(3) | max_length=3, choices=SIZE_CHOICES, default='NA'
+size | varchar | max_length=3, choices=SIZE_CHOICES, default='NA'
 price | float8 | max_digits=6, decimal_places=2, blank=False
 image | image |
 quantity | int | default=1
