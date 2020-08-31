@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
-from .models import Customer
+from .models import BillingAddress
 
 
 class UserLoginForm(forms.Form):
@@ -41,9 +41,9 @@ class UserRegistrationForm(UserCreationForm):
         return password2
 
 
-class CustomerForm(forms.ModelForm):
+class BillingAddressForm(forms.ModelForm):
     class Meta:
-        model = Customer
+        model = BillingAddress
         fields = [
             "full_name",
             "street_address_1",
