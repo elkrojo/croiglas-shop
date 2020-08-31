@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Customer(models.Model):
+class BillingAddress(models.Model):
     user = models.OneToOneField(User)
     full_name = models.CharField(max_length=42)
     street_address_1 = models.CharField(max_length=32)
