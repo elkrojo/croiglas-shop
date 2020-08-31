@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -9,8 +10,8 @@ def view_cart(request):
 
 def add_to_cart(request, id):
     """Add a quantity of the specified product to the cart"""
-    quantity = int(request.POST.get('quantity'))
 
+    quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
     if id in cart:
         cart[id] = int(cart[id]) + quantity
@@ -18,7 +19,8 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
-    return redirect(reverse('index'))
+    return_path = request.POST.get('return_path', '/')
+    return HttpResponseRedirect(return_path)
 
 
 def adjust_cart(request, id):
