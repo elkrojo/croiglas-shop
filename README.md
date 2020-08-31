@@ -92,7 +92,7 @@ Products are displayed in evenly spaced tiles, below which are clearly displayed
 
 **Account Profile Page** - allows users to enter their contact information. This information can be updated from the same page.     
 
-**Account Logout Page** - will redirect the user back to the home page, while displaying a message indicatiing they have logged out.        
+**Account Logout Page** - will redirect the user back to the home page, while displaying a message indicating they have logged out.        
 
 **Cart Page** - displays a table of contents showing what items are currently stored in the cart before checkout. Quantities can be updated before checkout.        
 
